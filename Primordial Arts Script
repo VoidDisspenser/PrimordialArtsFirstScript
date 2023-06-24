@@ -1,3 +1,4 @@
+-- this is my first script hpe u enjoy
 function tpPlace(placeCFrame)
 local myplr = game.Players.LocalPlayer;
     if myplr.Character then
