@@ -1,0 +1,2 @@
+# PrimordialArtsFirstScript
+ self explain
