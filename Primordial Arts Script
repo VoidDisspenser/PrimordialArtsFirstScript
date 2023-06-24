@@ -65,3 +65,5 @@ u:Button("Ash", function()
         tpPlace(game:GetService("Workspace").CollectSpawn.Willpower.Ash)
     end
 end)
+print(Gui Loading...)
+
