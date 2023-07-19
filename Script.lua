@@ -38,8 +38,13 @@ c:Button("Safe-Zone", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4086.654541015625, 854.4833374023438, -4174.62060546875)
 end)
 
-c:Button("Seal", function()
-local sealC = true
+c:Button("Unsafe-Zone", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1.7520514726638794, 70.96434783935547, -108.06066131591797)
+end)
+
+c:Toggle("Seal!", function(isToggled)
+   while isToggled do
+        local sealC = true
 while sealC do
 local args = {
     [1] = "UltimateAttackPermit"
