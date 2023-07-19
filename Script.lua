@@ -42,8 +42,8 @@ c:Button("Unsafe-Zone", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1.7520514726638794, 70.96434783935547, -108.06066131591797)
 end)
 
-c:Toggle("Seal!", function(isToggled)
-   while isToggled do
+c:Toggle("Seal!", function(bool)
+   while bool do
         local sealC = true
 while sealC do
 local args = {
