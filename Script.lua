@@ -18,6 +18,10 @@ g:Button("Time-Stop", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Time%20Stop%20Obfuscator'))()
 end)
 
+g:Button("BCO-SCRIPT", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/xAI-13/Personal-Scripts/main/BCO'),true))()
+end)
+
 local teleportsTab = Luxt:Tab("Teleports")
 
 local c = teleportsTab:Section("Temple")
