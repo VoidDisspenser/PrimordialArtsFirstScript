@@ -14,6 +14,10 @@ g:Button("Anti-Afk", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/VoidDisspenser/Scripts/main/idk"))()
 end)
 
+g:Button("Infinite Yield", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+end)
+
 g:Button("Time-Stop", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Time%20Stop%20Obfuscator'))()
 end)
