@@ -34,6 +34,17 @@ c:Button("Teleport-Active", function()
     workspace.Bases.Base1.objects.khrysosteleporter.RemoteFunction:InvokeServer(unpack(args))
 end)
 
+c:Button("Torment", function()
+   local tormentVote = true
+        while tormentVote do
+            local args = {
+    [1] = "Torment"
+}
+
+game:GetService("ReplicatedStorage").VoteRemote:InvokeServer(unpack(args))
+        end           
+end)
+
 c:Button("Safe-Zone", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4086.654541015625, 854.4833374023438, -4174.62060546875)
 end)
@@ -42,14 +53,14 @@ c:Button("Unsafe-Zone", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1.7520514726638794, 70.96434783935547, -108.06066131591797)
 end)
 
-c:Toggle("Seal!", function(bool)
-   while bool do
-        local sealC = true
-while sealC do
-local args = {
+c:Button("Seal!", function()
+local sealC = true
+    while sealC do
+             local args = {
     [1] = "UltimateAttackPermit"
 }
 
 game:GetService("Players").LocalPlayer.Character:FindFirstChild("Equinox Seal").RemoteFunction:InvokeServer(unpack(args))
-end
+    end
 end)
+
