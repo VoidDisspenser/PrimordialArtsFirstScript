@@ -15,6 +15,9 @@ end)
 section1.createButton("TimeStop", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Time%20Stop%20Obfuscator'))()
 end)
+section1.createButton("BCO-Script", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/xAI-13/Personal-Scripts/main/BCO'),true))()
+end)
 
 section2.createToggle("Torment-Mode", false, function(value)
 	while value == true do
