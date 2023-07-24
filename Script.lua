@@ -75,7 +75,15 @@ tab1.createDropdown("Weapon-Auto", {"Seal", "Star", "None"}, "None", function(va
         }
         
         game:GetService("Players").LocalPlayer.Character:FindFirstChild("Void Star").RemoteFunction:InvokeServer(unpack(args))
-                
+        local args = {
+    [1] = "shoot",
+    [2] = {
+        [1] = Vector3.new(-5.184283256530762, 94.08582305908203, 24.890167236328125),
+        [2] = Vector3.new(53.142662048339844, 8.000038146972656, 188.78208923339844)
+    }
+}
+
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Void Star").RemoteFunction:InvokeServer(unpack(args))
     end
 end)
 
