@@ -5,6 +5,44 @@ local window = lib.createWindow("Aqua", "BCO2", true)
 local tab1 = window.createTab("Main")
 local section1 = tab1.createSection("Scripts", false)
 local section2 = tab1.createSection("Temple", false)
+local function starRemote()        
+local args = {
+    [1] = "shoot",
+    [2] = {
+        [1] = Vector3.new(-129.3816680908203, 151.88101196289062, -232.2627716064453),
+        [2] = Vector3.new(162.0973663330078, 8.000038146972656, -112.4929428100586)
+    }
+}
+
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Void Star").RemoteFunction:InvokeServer(unpack(args))
+local args = {
+    [1] = "shoot",
+    [2] = {
+        [1] = Vector3.new(-187.27528381347656, 152.1672821044922, -166.65953063964844),
+        [2] = Vector3.new(-170.7216796875, 8.000038146972656, 109.27735137939453)
+    }
+}
+
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Void Star").RemoteFunction:InvokeServer(unpack(args))
+local args = {
+    [1] = "shoot",
+    [2] = {
+        [1] = Vector3.new(112.89905548095703, 152.06312561035156, -59.00821304321289),
+        [2] = Vector3.new(-6.393074035644531, 6.000038146972656, -4.472465515136719)
+    }
+}
+
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Void Star").RemoteFunction:InvokeServer(unpack(args))
+local args = {
+[1] = "shoot",
+[2] = {
+[1] = Vector3.new(-5.184283256530762, 94.08582305908203, 24.890167236328125),
+[2] = Vector3.new(53.142662048339844, 8.000038146972656, 188.78208923339844)
+}
+}
+
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Void Star").RemoteFunction:InvokeServer(unpack(args))
+end;
 
 section1.createButton("Dex", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
@@ -48,42 +86,7 @@ tab1.createDropdown("Weapon-Auto", {"Seal", "Star", "None"}, "None", function(va
         game:GetService("Players").LocalPlayer.Character:FindFirstChild("Equinox Seal").RemoteFunction:InvokeServer(unpack(args))
     end
     while value == "Star" do
-        local args = {
-            [1] = "shoot",
-            [2] = {
-                [1] = Vector3.new(-129.3816680908203, 151.88101196289062, -232.2627716064453),
-                [2] = Vector3.new(162.0973663330078, 8.000038146972656, -112.4929428100586)
-            }
-        }
-        
-        game:GetService("Players").LocalPlayer.Character:FindFirstChild("Void Star").RemoteFunction:InvokeServer(unpack(args))
-        local args = {
-            [1] = "shoot",
-            [2] = {
-                [1] = Vector3.new(-187.27528381347656, 152.1672821044922, -166.65953063964844),
-                [2] = Vector3.new(-170.7216796875, 8.000038146972656, 109.27735137939453)
-            }
-        }
-        
-        game:GetService("Players").LocalPlayer.Character:FindFirstChild("Void Star").RemoteFunction:InvokeServer(unpack(args))
-        local args = {
-            [1] = "shoot",
-            [2] = {
-                [1] = Vector3.new(112.89905548095703, 152.06312561035156, -59.00821304321289),
-                [2] = Vector3.new(-6.393074035644531, 6.000038146972656, -4.472465515136719)
-            }
-        }
-        
-        game:GetService("Players").LocalPlayer.Character:FindFirstChild("Void Star").RemoteFunction:InvokeServer(unpack(args))
-        local args = {
-    [1] = "shoot",
-    [2] = {
-        [1] = Vector3.new(-5.184283256530762, 94.08582305908203, 24.890167236328125),
-        [2] = Vector3.new(53.142662048339844, 8.000038146972656, 188.78208923339844)
-    }
-}
-
-game:GetService("Players").LocalPlayer.Character:FindFirstChild("Void Star").RemoteFunction:InvokeServer(unpack(args))
+        starRemote()
     end
 end)
 
