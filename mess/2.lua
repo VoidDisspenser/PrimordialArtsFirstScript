@@ -46,7 +46,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character:FindFirstChild("Void Star").RemoteFunction:InvokeServer(unpack(args))
 end
 Section:NewButton("AntiAfk", "Enables the antiafk", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/VoidDisspenser/Scripts/main/idk"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/VoidDisspenser/Scripts/main/mess/AntiAfk"))()
 end)
 Section:NewButton("Dex", "Enables the Dex-explorer", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
