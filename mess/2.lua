@@ -102,6 +102,12 @@ Section2:NewToggle("Klep-Vote", "self-explain", function(state)
         game:GetService("ReplicatedStorage").WageRemote:InvokeServer(unpack(args))    
     end
 end)
+Section:NewButton("EquipTools", "oo", function()
+    for i,v in game.Players.LocalPlayer.Backpack:GetChildren() do
+        if v:IsA("Tool") then
+          v.Parent = game.Players.LocalPlayer.Character
+     
+end)
 Section:NewDropdown("Weapons-Auto", "This can make u spam the weapon ability", {"Seal", "Star", "None"}, function(currentOption)
     while currentOption == "Seal" do
         local args = {
