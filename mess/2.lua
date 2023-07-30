@@ -106,7 +106,8 @@ Section:NewButton("EquipTools", "oo", function()
     for i,v in game.Players.LocalPlayer.Backpack:GetChildren() do
         if v:IsA("Tool") then
           v.Parent = game.Players.LocalPlayer.Character
-     
+        end
+    end
 end)
 Section:NewDropdown("Weapons-Auto", "This can make u spam the weapon ability", {"Seal", "Star", "None"}, function(currentOption)
     while currentOption == "Seal" do
