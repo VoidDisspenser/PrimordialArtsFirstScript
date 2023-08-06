@@ -75,5 +75,10 @@ spawn(function()
         task.wait(1)  -- Esperar 1 segundo antes de verificar nuevamente
     end
 end)
-
+spawn(function()
+    while true do
+        remote(_G.PowerMoves[6])
+        task.wait(1)  -- Esperar 1 segundo antes de verificar nuevamente
+    end
+end)
 
