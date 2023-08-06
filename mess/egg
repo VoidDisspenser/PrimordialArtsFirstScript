@@ -1,6 +1,6 @@
-local function remote(abilityName)
+local function remote(moveName)
     local args = {
-        [1] = abilityName
+        [1] = moveName
     }
 
     game:GetService("ReplicatedStorage"):FindFirstChild("2332585443Client").StartMove:FireServer(unpack(args))
@@ -47,31 +47,31 @@ spawn(function()
 end)
 spawn(function()
     while true do
-        remote(PowerMoves[1])
+        remote(_G.PowerMoves[1])
         task.wait(1)  -- Esperar 1 segundo antes de verificar nuevamente
     end
 end)
 spawn(function()
     while true do
-        remote(PowerMoves[2])
+        remote(_G.PowerMoves[2])
         task.wait(1)  -- Esperar 1 segundo antes de verificar nuevamente
     end
 end)
 spawn(function()
     while true do
-        remote(PowerMoves[3])
+        remote(_G.PowerMoves[3])
         task.wait(1)  -- Esperar 1 segundo antes de verificar nuevamente
     end
 end)
 spawn(function()
     while true do
-        remote(PowerMoves[4])
+        remote(_G.PowerMoves[4])
         task.wait(1)  -- Esperar 1 segundo antes de verificar nuevamente
     end
 end)
 spawn(function()
     while true do
-        remote(PowerMoves[5])
+        remote(_G.PowerMoves[5])
         task.wait(1)  -- Esperar 1 segundo antes de verificar nuevamente
     end
 end)
