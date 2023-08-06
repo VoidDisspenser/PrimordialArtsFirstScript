@@ -1,0 +1,79 @@
+local function remote(abilityName)
+    local args = {
+        [1] = abilityName
+    }
+
+    game:GetService("ReplicatedStorage"):FindFirstChild("2332585443Client").StartMove:FireServer(unpack(args))
+    game:GetService("ReplicatedStorage"):FindFirstChild("2332585443Client").EndMove:FireServer(unpack(args))
+end
+
+
+local function dieresp()
+    local humanoid = game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid")
+    if humanoid.Health <= 0 then
+        task.wait(6)
+        game:GetService("ReplicatedStorage").Client.Teleport:InvokeServer()
+        game:GetService("ReplicatedStorage").Client.Intro:InvokeServer()
+    end
+end
+
+spawn(function()
+    while true do
+        dieresp()
+        task.wait(1)  -- Esperar 1 segundo antes de verificar nuevamente
+    end
+end)
+local function toolequip()
+     for i,v in game.Players.LocalPlayer.Backpack:GetChildren() do
+        if v:IsA("Tool") then
+          v.Parent = game.Players.LocalPlayer.Character
+        end
+    end
+
+end
+
+
+spawn(function()
+    while true do
+        dieresp()
+        task.wait(1)  -- Esperar 1 segundo antes de verificar nuevamente
+    end
+end)
+spawn(function()
+    while true do
+        toolequip()
+        task.wait(1)  -- Esperar 1 segundo antes de verificar nuevamente
+    end
+end)
+spawn(function()
+    while true do
+        remote(PowerMoves[1])
+        task.wait(1)  -- Esperar 1 segundo antes de verificar nuevamente
+    end
+end)
+spawn(function()
+    while true do
+        remote(PowerMoves[2])
+        task.wait(1)  -- Esperar 1 segundo antes de verificar nuevamente
+    end
+end)
+spawn(function()
+    while true do
+        remote(PowerMoves[3])
+        task.wait(1)  -- Esperar 1 segundo antes de verificar nuevamente
+    end
+end)
+spawn(function()
+    while true do
+        remote(PowerMoves[4])
+        task.wait(1)  -- Esperar 1 segundo antes de verificar nuevamente
+    end
+end)
+spawn(function()
+    while true do
+        remote(PowerMoves[5])
+        task.wait(1)  -- Esperar 1 segundo antes de verificar nuevamente
+    end
+end)
+
+
