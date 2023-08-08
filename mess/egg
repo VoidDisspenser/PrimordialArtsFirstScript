@@ -1,13 +1,21 @@
-local function remote(moveName)
-    local args = {
-        [1] = moveName
-    }
+local services = setmetatable({}, {
+    __index = function(_, service)
+        return game:GetService(service)
+    end
+})
+local client = services.Players.LocalPlayer
+local moves = services.ReplicatedStorage[client.UserId .. "Client"]
 
-    game:GetService("ReplicatedStorage"):FindFirstChild("2332585443Client").StartMove:FireServer(unpack(args))
-    game:GetService("ReplicatedStorage"):FindFirstChild("2332585443Client").EndMove:FireServer(unpack(args))
+local function domoves()
+    for _, move in next, client.Backpack:GetChildren() do
+        local str = move.Name:split(" (")[1]
+
+        task.spawn(function()
+            moves.StartMove:FireServer(str)
+            moves.EndMove:FireServer(str)
+        end)
+    end
 end
-
-
 local function dieresp()
     local humanoid = game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid")
     if humanoid.Health <= 0 then
@@ -16,70 +24,30 @@ local function dieresp()
         game:GetService("ReplicatedStorage").Client.Intro:InvokeServer()
     end
 end
-
-spawn(function()
-    while true do
-        dieresp()
-        task.wait(1)  -- Esperar 1 segundo antes de verificar nuevamente
-    end
-end)
-local function toolequip()
-     for i,v in game.Players.LocalPlayer.Backpack:GetChildren() do
-        if v:IsA("Tool") then
-          v.Parent = game.Players.LocalPlayer.Character
+local library = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ShaddowScripts/Main/main/Library"))()
+local Main = library:CreateWindow("EGG","Crimson")
+local tab = Main:CreateTab("Main")
+tab:CreateToggle("AutoFarm",function(a)
+if a then 
+    spawn(function()
+        while a do
+            dieresp()
+            task.wait(0.5)
+        end 
+    end)
+    spawn(function()
+        while a do
+            domoves()
+            task.wait(0.5)
         end
-    end
-
+    end)
 end
-
-
-spawn(function()
-    while true do
-        dieresp()
-        task.wait(1)  -- Esperar 1 segundo antes de verificar nuevamente
-    end
 end)
-spawn(function()
-    while true do
-        toolequip()
-        task.wait(1)  -- Esperar 1 segundo antes de verificar nuevamente
-    end
+tab:CreateButton("AntiAfk",function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/VoidDisspenser/Scripts/main/mess/AntiAfk.lua"))()
 end)
-spawn(function()
-    while true do
-        remote(_G.PowerMoves[1])
-        task.wait(1)  -- Esperar 1 segundo antes de verificar nuevamente
-    end
-end)
-spawn(function()
-    while true do
-        remote(_G.PowerMoves[2])
-        task.wait(1)  -- Esperar 1 segundo antes de verificar nuevamente
-    end
-end)
-spawn(function()
-    while true do
-        remote(_G.PowerMoves[3])
-        task.wait(1)  -- Esperar 1 segundo antes de verificar nuevamente
-    end
-end)
-spawn(function()
-    while true do
-        remote(_G.PowerMoves[4])
-        task.wait(1)  -- Esperar 1 segundo antes de verificar nuevamente
-    end
-end)
-spawn(function()
-    while true do
-        remote(_G.PowerMoves[5])
-        task.wait(1)  -- Esperar 1 segundo antes de verificar nuevamente
-    end
+tab:CreateButton("Infinite Yield",function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
 end)
 
-spawn(function()
-    while true do
-        remote(_G.PowerMoves[6])
-        task.wait(1)  -- Esperar 1 segundo antes de verificar nuevamente
-    end
-end)
-
+tab:Show()
