@@ -23,6 +23,7 @@ Section:NewButton("Inmortality", "U cant reverse the inmortality", function()
 end)
 Section:NewButton("Enable chat", "selfexplain", function()
    game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+   game.StarterGui:SetCoreGuiEnabled(2, true)
 end)
 
 Section:NewDropdown("Witches", "Change witch fast", {"Cleo Sowande", "Genevie", "Olivia Parker", "Celeste Dubois", "Luke Parker", "Sophie Deveraux", "Monique Deveraux", "Sheila Bennett", "Bastiana Natale", "Josie Saltzman", "Lizzie Saltzman"}, function(currentOption)
