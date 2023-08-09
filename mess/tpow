@@ -54,7 +54,7 @@ function tpPlace(placeCFrame)
         end 
 end
 
-Section:NewDropdown("TP", "Places", {"Middle", "Cementary", "Totem", "Fire Circle", "Celeste Bones"}, function(u)
+Section:NewDropdown("TP", "Places", {"Middle", "Cementary", "Totem", "Fire Circle", "Celeste Bones", "Pray"}, function(u)
     if u == "Middle" then
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(295.3631591796875, 20.47399139404297, 411.768798828125)
     elseif u == "Cementary" then
@@ -65,6 +65,8 @@ Section:NewDropdown("TP", "Places", {"Middle", "Cementary", "Totem", "Fire Circl
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(700.1104125976562, 5.1977739334106445, 459.21063232421875)
     elseif u == "Celeste Bones" then
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(681.3072509765625, 4.695892333984375, 295.8820495605469)
+    elseif u == "Pray" then
+    tpPlace(game.Workspace.HollowOffer)
     end
 end)
     
