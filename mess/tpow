@@ -1,0 +1,65 @@
+local function changeCH(character)
+local args = {
+    [1] = character,
+    [2] = "Outfit1",
+    [3] = character,
+    [4] = false
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("CharacterChange"):FireServer(unpack(args))
+end
+
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("TPOW", "Sentinel")
+local Tab = Window:NewTab("MA1N")
+local Section = Tab:NewSection("<3")
+Section:NewKeybind("Show-Hide Gui", "KeybindInfo", Enum.KeyCode.F, function()
+	Library:ToggleUI()
+end)
+Section:NewButton("Inmortality", "U cant reverse the inmortality", function()
+    local r1 = game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("HandlerEvent")
+    remote:Destroy()
+end)
+Section:NewDropdown("Witches", "Change witch fast", {"Cleo Sowande", "Genevie", "Olivia Parker", "Celeste Dubois", "Luke Parker", "Sophie Deveraux", "Monique Deveraux", "Sheila Bennett", "Bastiana Natale", "Josie Saltzman", "Lizzie Saltzman"}, function(currentOption)
+changeCH(currentOption)
+end)
+Section:NewButton("Respawn", ".", function()
+    local args = {
+        [1] = "Respawn"
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("RespawnEvent"):FireServer(unpack(args))
+end)
+
+local args = {
+    [1] = currentOption,
+    [2] = "Outfit1",
+    [3] = currentOption,
+    [4] = false
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("CharacterChange"):FireServer(unpack(args))    
+
+
+function tpPlace(placeCFrame)
+    local myplr = game.Players.LocalPlayer;
+        if myplr.Character then
+           myplr.Character.HumanoidRootPart.CFrame = placeCFrame   
+        end 
+end
+
+Section:NewDropdown("TP", "Places", {"Middle", "Cementary", "Totem", "Fire Circle", "Celeste Bones"}, function(u)
+    if u == "Middle" then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(295.3631591796875, 20.47399139404297, 411.768798828125)
+    elseif u == "Cementary" then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(878.5845947265625, 5.182148456573486, 1032.5089111328125)
+    elseif u == "Totem" then
+        tpPlace(game:GetService("Workspace").Totem.CFrame)
+    elseif u == "Fire Circle" then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(700.1104125976562, 5.1977739334106445, 459.21063232421875)
+    elseif u == "Celeste Bones" then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(681.3072509765625, 4.695892333984375, 295.8820495605469)
+    end
+end)
+    
