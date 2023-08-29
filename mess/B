@@ -110,11 +110,13 @@ local Tab = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
-Tab:AddButton({
+Tab:AddBind({
 	Name = "PDo",
+        Default = Enum.KeyCode.LeftControl,
+	Hold = false,
 	Callback = function()
       		equip()
-			attack()
+	        attack()
   	end    
 })
 
