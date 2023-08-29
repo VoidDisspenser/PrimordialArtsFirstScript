@@ -1,0 +1,120 @@
+
+local function equip()
+	 _G.table = {
+		[1] = game:GetService("Players").LocalPlayer.Backpack["Fang of Gilgamesh"],
+		[2] = game:GetService("Players").LocalPlayer.Backpack["Staff of Conflict"],
+		[3] = game:GetService("Players").LocalPlayer.Backpack["The Caliburn"],
+		[4] = game:GetService("Players").LocalPlayer.Backpack["Matrix Accelerator"]
+	}
+	
+	for i, v in _G.table do
+		if v.Parent == game.Players.LocalPlayer.Backpack then
+			v.Parent = game.Players.LocalPlayer.Character
+		else print("Already equipped, or need to equip")
+		end
+	end
+	end
+	local function attack()
+	spawn(function()
+	while wait() do
+	local args = {
+		[1] = "hit",
+		[2] = {
+			[1] = 1500,
+			[2] = 3
+		}
+	}
+	
+	game:GetService("Players").LocalPlayer.Character:FindFirstChild("Matrix Accelerator").RemoteFunction:InvokeServer(unpack(args))
+	end
+	end)
+	spawn(function()
+	while wait() do
+local args = {
+    [1] = "hit",
+    [2] = {
+        [1] = 6000,
+        [2] = 4
+    }
+}
+
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Fang of Gilgamesh").RemoteFunction:InvokeServer(unpack(args))
+	end
+	end)
+	spawn(function()
+	while wait() do
+	local args = {
+		[1] = "hit",
+		[2] = {
+			[1] = 1,
+			[2] = 1
+		}
+	}
+	
+	game:GetService("Players").LocalPlayer.Character:FindFirstChild("The Caliburn").RemoteFunction:InvokeServer(unpack(args))
+	end
+	end)
+	spawn(function()
+	while wait() do
+	local args = {
+		[1] = "holycross",
+		[2] = {
+			[1] = Vector3.new(-223.12908935546875, -0.5150753259658813, -228.87603759765625),
+			[2] = 300
+		}
+	}
+	
+	game:GetService("Players").LocalPlayer.Character:FindFirstChild("Kiln of the Holy Flame").RemoteFunction:InvokeServer(unpack(args))
+	end
+	end)
+	spawn(function()
+	while wait() do
+	local args = {
+		[1] = "portalblasts",
+		[2] = {
+			[1] = game:GetService("Players").LocalPlayer.Character
+		}
+	}
+	
+	game:GetService("Players").LocalPlayer.Character:FindFirstChild("Staff of Conflict").RemoteFunction:InvokeServer(unpack(args))
+	end
+	end)
+		spawn(function()
+	while wait() do
+local args = {
+    [1] = "consumertrains"
+}
+
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Fang of Gilgamesh").RemoteFunction:InvokeServer(unpack(args))
+local args = {
+    [1] = "consumerspikes"
+}
+
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Fang of Gilgamesh").RemoteFunction:InvokeServer(unpack(args))
+local args = {
+    [1] = "realitytear"
+}
+
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Fang of Gilgamesh").RemoteFunction:InvokeServer(unpack(args))
+
+end
+end)
+
+end
+	
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "B2", HidePremium = false, SaveConfig = true, ConfigFolder = "B2"})
+
+local Tab = Window:MakeTab({
+	Name = "main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "PDo",
+	Callback = function()
+      		equip()
+			attack()
+  	end    
+})
+
