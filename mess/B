@@ -119,4 +119,14 @@ Tab:AddBind({
 	        attack()
   	end    
 })
+Tab:AddToggle({
+	Name = "Equip",
+	Default = false,
+	Callback = function(Value)
+	     while value do
+               task.wait(0.5)
+               game.StarterGui:SetCoreGuiEnabled(2, true)
+	end    
+})
+
 OrionLib:Init()
